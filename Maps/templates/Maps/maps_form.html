@@ -1,0 +1,23 @@
+{% extends 'Maps/base.html' %}
+
+{% block content %}
+<div class="header-bar">
+    <a href="{% url 'maps' %}">&#8592; Map</a>
+
+</div>
+
+<div class="card-body">
+    <form method="POST" action="">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input class="button" type="submit" value="submit">
+    </form>
+<script>
+    Lat = '26.447938';
+    Lon = '80.311501';
+    document.getElementById("id_lat").defaultValue = Lat;
+    document.getElementById("id_lon").defaultValue = Lon;
+</script>
+</div>
+
+{% endblock %}
